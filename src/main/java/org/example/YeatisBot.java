@@ -29,60 +29,85 @@ public class YeatisBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
-            } else if (update.hasCallbackQuery()) {
-                CallbackQuery callbackQuery = update.getCallbackQuery();
-                String data = callbackQuery.getData();
-
-                Integer messageId = callbackQuery.getMessage().getMessageId();
+            }
 
                 //til
+            }
+        else if (update.hasCallbackQuery()) {
+            CallbackQuery callbackQuery = update.getCallbackQuery();
+            String data = callbackQuery.getData();
+            Long chatId = callbackQuery.getMessage().getChatId();
 
-                if(data.equals("eng")){
-                    try {
-                        execute(yetis.cityEng(chatId));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-                if(data.equals("cityOfNibrE")){
-                    try {
-                        execute(yetis.cityEngShort(chatId));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
+            Integer messageId = callbackQuery.getMessage().getMessageId();
 
-                if(data.equals("uzb")){
-                    try {
-                        execute(yetis.cityUzb(chatId));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-                if(data.equals("cityOfNibrU")){
-                    try {
-                        execute(yetis.cityUzbShort(chatId));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
+            //til
 
-                if(data.equals("rus")){
-                    try {
-                        execute(yetis.cityRus(chatId));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
+            if(data.equals("eng")){
+                try {
+                    execute(yetis.cityEng(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
                 }
-                if(data.equals("cityOfNibrR")){
-                    try {
-                        execute(yetis.cityRusShort(chatId));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
+            }
+            if(data.equals("cityOfNibrE")){
+                try {
+                    execute(yetis.cityEngShort(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
                 }
+            }
 
-                //til
+            if(data.equals("uzb")){
+                try {
+                    execute(yetis.cityUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("cityOfNibrU")){
+                try {
+                    execute(yetis.cityUzbShort(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            if(data.equals("rus")){
+                try {
+                    execute(yetis.cityRus(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("cityOfNibrR")){
+                try {
+                    execute(yetis.cityRusShort(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+
+            if(data.equals("chLanUzb")){
+                try {
+                    execute(yetis.changeLanguageUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("chLanEng")){
+                try {
+                    execute(yetis.changeLanguageEng(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("chLanRus")){
+                try {
+                    execute(yetis.changeLanguageRus(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
             }
 
         }

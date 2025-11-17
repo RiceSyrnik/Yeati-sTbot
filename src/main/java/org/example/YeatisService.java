@@ -527,11 +527,6 @@ public class YeatisService {
         row.add(button);
         rowList.add(row);
 
-        button = new InlineKeyboardButton();
-        button.setText("TheNiberland");
-        button.setCallbackData("cityOfNibrR");
-        row.add(button);
-
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Город");
