@@ -173,31 +173,31 @@ public class YeatisService {
         List<InlineKeyboardButton> row = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
         rowList.add(row);
 
@@ -209,13 +209,13 @@ public class YeatisService {
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
 
         row = new ArrayList<>();
@@ -240,31 +240,31 @@ public class YeatisService {
         List<InlineKeyboardButton> row = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
         rowList.add(row);
 
@@ -276,13 +276,13 @@ public class YeatisService {
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
 
         row = new ArrayList<>();
@@ -307,31 +307,31 @@ public class YeatisService {
         List<InlineKeyboardButton> row = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
         rowList.add(row);
 
@@ -343,13 +343,13 @@ public class YeatisService {
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
 
         row = new ArrayList<>();
@@ -375,44 +375,44 @@ public class YeatisService {
         List<InlineKeyboardButton> row = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
         rowList.add(row);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("City");
-        button.setCallbackData("city");
+        button.setCallbackData("cityU");
         row.add(button);
 
         row = new ArrayList<>();
@@ -437,44 +437,44 @@ public class YeatisService {
         List<InlineKeyboardButton> row = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
         rowList.add(row);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Shaxar");
-        button.setCallbackData("city");
+        button.setCallbackData("cityE");
         row.add(button);
 
         row = new ArrayList<>();
@@ -499,44 +499,44 @@ public class YeatisService {
         List<InlineKeyboardButton> row = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
         rowList.add(row);
 
         row = new ArrayList<>();
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
         rowList.add(row);
 
         button = new InlineKeyboardButton();
         button.setText("Город");
-        button.setCallbackData("city");
+        button.setCallbackData("cityR");
         row.add(button);
 
         row = new ArrayList<>();
@@ -552,4 +552,154 @@ public class YeatisService {
     }
 
     //shaxar
+
+    //menu
+
+    public SendMessage MenuUzb(Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText("Menyu");
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("\uD83C\uDF5FZakaz qilmoq");
+        button.setCallbackData("orderUzb");
+        row.add(button);
+        rowList.add(row);
+
+        button = new InlineKeyboardButton();
+        button.setText("\uD83D\uDCE8Sharhlar");
+        button.setCallbackData("revUzb");
+        row.add(button);
+
+        row = new ArrayList<>();
+        button = new InlineKeyboardButton();
+        button.setText("Biz haqimizda");
+        button.setCallbackData("abotusUzb");
+        row.add(button);
+        rowList.add(row);
+
+        button = new InlineKeyboardButton();
+        button.setText("☎\uFE0FBog'lanmoq");
+        button.setCallbackData("aleuUzb");
+        row.add(button);
+
+        row = new ArrayList<>();
+        button = new InlineKeyboardButton();
+        button.setText("\uD83C\uDFB0Promokod");
+        button.setCallbackData("promoUzb");
+        row.add(button);
+        rowList.add(row);
+
+        button = new InlineKeyboardButton();
+        button.setText("\uD83D\uDCBCBizga qo'shiling");
+        button.setCallbackData("jobUzb");
+        row.add(button);
+
+        inlineKeyboardMarkup.setKeyboard(rowList);
+        sendMessage.setReplyMarkup(inlineKeyboardMarkup);
+        return sendMessage;
+    }
+    public SendMessage MenuEng(Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText("Menu");
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("\uD83C\uDF5FOrder");
+        button.setCallbackData("orderEng");
+        row.add(button);
+        rowList.add(row);
+
+        button = new InlineKeyboardButton();
+        button.setText("\uD83D\uDCE8Reviews");
+        button.setCallbackData("revEng");
+        row.add(button);
+
+        row = new ArrayList<>();
+        button = new InlineKeyboardButton();
+        button.setText("About us");
+        button.setCallbackData("abotusEng");
+        row.add(button);
+        rowList.add(row);
+
+        button = new InlineKeyboardButton();
+        button.setText("☎\uFE0FContact us");
+        button.setCallbackData("aleuEng");
+        row.add(button);
+
+        row = new ArrayList<>();
+        button = new InlineKeyboardButton();
+        button.setText("\uD83C\uDFB0Promocode");
+        button.setCallbackData("promoEng");
+        row.add(button);
+        rowList.add(row);
+
+        button = new InlineKeyboardButton();
+        button.setText("\uD83D\uDCBCJoin us");
+        button.setCallbackData("jobEng");
+        row.add(button);
+
+        inlineKeyboardMarkup.setKeyboard(rowList);
+        sendMessage.setReplyMarkup(inlineKeyboardMarkup);
+        return sendMessage;
+    }
+    public SendMessage MenuRus(Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText("Меню");
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("\uD83C\uDF5FЗаказать");
+        button.setCallbackData("orderRus");
+        row.add(button);
+        rowList.add(row);
+
+        button = new InlineKeyboardButton();
+        button.setText("\uD83D\uDCE8Отзывы");
+        button.setCallbackData("revRus");
+        row.add(button);
+
+        row = new ArrayList<>();
+        button = new InlineKeyboardButton();
+        button.setText("О нас");
+        button.setCallbackData("abotusRus");
+        row.add(button);
+        rowList.add(row);
+
+        button = new InlineKeyboardButton();
+        button.setText("☎\uFE0FСвзаться");
+        button.setCallbackData("aleuRus");
+        row.add(button);
+
+        row = new ArrayList<>();
+        button = new InlineKeyboardButton();
+        button.setText("\uD83C\uDFB0Промокод");
+        button.setCallbackData("promoRus");
+        row.add(button);
+        rowList.add(row);
+
+        button = new InlineKeyboardButton();
+        button.setText("\uD83D\uDCBCПрисоединяйтесь к нам");
+        button.setCallbackData("jobRus");
+        row.add(button);
+
+        inlineKeyboardMarkup.setKeyboard(rowList);
+        sendMessage.setReplyMarkup(inlineKeyboardMarkup);
+        return sendMessage;
+    }
+
+
+    //menu
 }

@@ -40,7 +40,7 @@ public class YeatisBot extends TelegramLongPollingBot {
 
             Integer messageId = callbackQuery.getMessage().getMessageId();
 
-            //til
+            //shaxar
 
             if(data.equals("eng")){
                 try {
@@ -86,7 +86,10 @@ public class YeatisBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             }
+            //shaxar
 
+
+            //til o'zgar
 
             if(data.equals("chLanUzb")){
                 try {
@@ -109,6 +112,34 @@ public class YeatisBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             }
+
+            //til o'zgar
+
+            //menu
+
+            if(data.equals("cityE")){
+                try {
+                    execute(yetis.MenuUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("cityU")){
+                try {
+                    execute(yetis.MenuEng(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("cityR")){
+                try {
+                    execute(yetis.MenuRus(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            //menu
 
         }
 
