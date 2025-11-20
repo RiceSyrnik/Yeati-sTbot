@@ -31,6 +31,10 @@ public class YeatisBot extends TelegramLongPollingBot {
                 }
             }
 
+
+
+
+
                 //til
             }
         else if (update.hasCallbackQuery()) {
@@ -141,9 +145,79 @@ public class YeatisBot extends TelegramLongPollingBot {
 
             //menu
 
+            //sharhlar
+
+            if(data.equals("revUzb")){
+                try {
+                    execute(yetis.FeedbackUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            if (data.equals("OneStarUzb")){
+                try {
+                    execute(yetis.OneRatingUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw  new RuntimeException(e);
+                }
+            }
+
+            if (data.equals("TwoStarUzb")){
+                try {
+                    execute(yetis.TwoRatingUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw  new RuntimeException(e);
+                }
+            }
+
+            if (data.equals("ThreeStarUzb")){
+                try {
+                    execute(yetis.ThreeRatingUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw  new RuntimeException(e);
+                }
+            }
+
+            if (data.equals("FourStarUzb")){
+                try {
+                    execute(yetis.FourRatingUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw  new RuntimeException(e);
+                }
+            }
+
+            if (data.equals("FiveStarUzb")){
+                try {
+                    execute(yetis.FourRatingUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw  new RuntimeException(e);
+                }
+            }
+
+            if (data.equals("sixeStarUzb")){
+                try {
+
+                    execute(yetis.cityUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw  new RuntimeException(e);
+                }
+            }
+
+
+
+
+
+
+
+
+            //sharhlar
+
         }
 
     }
+
+
 
     @Override
     public String getBotUsername() {

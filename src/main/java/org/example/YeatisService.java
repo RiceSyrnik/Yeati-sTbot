@@ -702,4 +702,105 @@ public class YeatisService {
 
 
     //menu
+
+    //sharhlar
+    public SendMessage FeedbackUzb(Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText("baholang 0-5 gacha");
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+
+
+        List<InlineKeyboardButton> row1 = new ArrayList<>();
+
+        InlineKeyboardButton btn1 = new InlineKeyboardButton("⭐");
+        btn1.setCallbackData("OneStarUzb");
+        row1.add(btn1);
+
+        InlineKeyboardButton btn2 = new InlineKeyboardButton("⭐⭐");
+        btn2.setCallbackData("TwoStarUzb");
+        row1.add(btn2);
+
+        InlineKeyboardButton btn3 = new InlineKeyboardButton("⭐⭐⭐");
+        btn3.setCallbackData("ThreeStarUzb");
+        row1.add(btn3);
+
+        rowList.add(row1);
+
+        List<InlineKeyboardButton> row2 = new ArrayList<>();
+
+        InlineKeyboardButton btn4 = new InlineKeyboardButton("⭐⭐⭐⭐");
+        btn4.setCallbackData("FourStarUzb");
+        row2.add(btn4);
+
+        InlineKeyboardButton btn5 = new InlineKeyboardButton("⭐⭐⭐⭐⭐");
+        btn5.setCallbackData("FiveStarUzb");
+        row2.add(btn5);
+
+
+
+        rowList.add(row2);
+
+        List<InlineKeyboardButton> row3 = new ArrayList<>();
+
+        InlineKeyboardButton btn6 = new InlineKeyboardButton("keyinroq");
+        btn6.setCallbackData("sixeStarUzb");
+        row3.add(btn6);
+
+        rowList.add(row3);
+
+        inlineKeyboardMarkup.setKeyboard(rowList);
+        sendMessage.setReplyMarkup(inlineKeyboardMarkup);
+
+        return sendMessage;
+
+    }
+
+    public SendMessage OneRatingUzb(Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText("Voy, biz unchalik ham yomon emasmiz shekilli…");
+        return sendMessage;
+    }
+
+    public SendMessage TwoRatingUzb(Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText("Noqulaylik uchun uzr, biz o‘zimizni yaxshilashga harakat qilamiz");
+        return sendMessage;
+    }
+
+    public SendMessage ThreeRatingUzb(Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText("Noqulaylik uchun uzr, biz o‘zimizni yaxshilashga harakat qilamiz");
+        return sendMessage;
+    }
+
+    public SendMessage FourRatingUzb(Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText("Baholashingiz uchun rahmat!");
+        return sendMessage;
+    }
+
+//    public SendMessage FiveRatingUzb(Long chatId) {
+//        SendMessage sendMessage = new SendMessage();
+//        sendMessage.setChatId(chatId);
+//        sendMessage.setText("Baholashingiz uchun rahmat! Chegirmadan foydalanish uchun ‘FIVEFIVE’ promo-kodini ishlating.");
+//        return sendMessage;
+//    }
+
+    public SendMessage SixRatingUzb(Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText("Baholashingiz uchun rahmat! Chegirmadan foydalanish uchun ‘FIVEFIVE’ promo-kodini ishlating.");
+        return sendMessage;
+    }
+
+
+
+    //sharhlar
 }
