@@ -1,14 +1,23 @@
 package org.example;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageCaption;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.sql.SQLOutput;
+import java.util.HashMap;
+import java.util.Map;
 
 public class YeatisBot extends TelegramLongPollingBot {
 
+    Map<Long, String> state = new HashMap<>();
+
+    int promocount = 0;
+    int reveving = 0;
     YeatisService yetis = new YeatisService();
 
     @Override
@@ -20,6 +29,7 @@ public class YeatisBot extends TelegramLongPollingBot {
 
             String firstName = update.getMessage().getFrom().getFirstName();
             String lastName = update.getMessage().getFrom().getLastName();
+
 
             System.out.println("First Name: " + firstName + "\nLast Name: " + lastName + "\nMessage: " +  message);
 
@@ -35,183 +45,399 @@ public class YeatisBot extends TelegramLongPollingBot {
 
 
 
+
+            //promocode
+
+            else if(message.equals("MANESHAKMAN") && promocount>0) {
+                try {
+                    execute(yetis.PromoShakman(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            } else if(!message.equals("MANESHAKMAN") && promocount>0) {
+                try {
+                    execute(yetis.InvalidPromoUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            //promocode
+
+            //rating
+
+            else if (state.getOrDefault(chatId, "").equals("fikr") && reveving>0) {
+                try {
+                    execute(yetis.rateUzb(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            //rating
+
                 //til
             }
         else if (update.hasCallbackQuery()) {
             CallbackQuery callbackQuery = update.getCallbackQuery();
             String data = callbackQuery.getData();
-            Long chatId = callbackQuery.getMessage().getChatId();
+            Long chatId1 = callbackQuery.getMessage().getChatId();
 
             Integer messageId = callbackQuery.getMessage().getMessageId();
 
-            //shaxar
+            //language
 
-            if(data.equals("eng")){
+            if (data.equals("uzb")) {
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
                 try {
-                    execute(yetis.cityEng(chatId));
+                    execute(editMessageReplyMarkup);
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
-            }
-            if(data.equals("cityOfNibrE")){
                 try {
-                    execute(yetis.cityEngShort(chatId));
-                } catch (TelegramApiException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-
-            if(data.equals("uzb")){
-                try {
-                    execute(yetis.cityUzb(chatId));
-                } catch (TelegramApiException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            if(data.equals("cityOfNibrU")){
-                try {
-                    execute(yetis.cityUzbShort(chatId));
+                    execute(yetis.cityUzb(chatId1));
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
             }
 
-            if(data.equals("rus")){
+            if (data.equals("chLanUzb")) {
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
                 try {
-                    execute(yetis.cityRus(chatId));
+                    execute(editMessageReplyMarkup);
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
-            }
-            if(data.equals("cityOfNibrR")){
                 try {
-                    execute(yetis.cityRusShort(chatId));
-                } catch (TelegramApiException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            //shaxar
-
-
-            //til o'zgar
-
-            if(data.equals("chLanUzb")){
-                try {
-                    execute(yetis.changeLanguageUzb(chatId));
-                } catch (TelegramApiException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            if(data.equals("chLanEng")){
-                try {
-                    execute(yetis.changeLanguageEng(chatId));
-                } catch (TelegramApiException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            if(data.equals("chLanRus")){
-                try {
-                    execute(yetis.changeLanguageRus(chatId));
+                    execute(yetis.changeLanguageUzb(chatId1));
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
             }
 
-            //til o'zgar
+            //language
+
+            //city
+
+            if (data.equals("cityOfNibrU")) {
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.cityUzbShort(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            //city
 
             //menu
 
-            if(data.equals("cityE")){
+            if (data.equals("cityE")) {
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
                 try {
-                    execute(yetis.MenuUzb(chatId));
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.MenuUzb(chatId1));
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
             }
-            if(data.equals("cityU")){
+
+            if (data.equals("menuUzb")) {
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
                 try {
-                    execute(yetis.MenuEng(chatId));
+                    execute(editMessageReplyMarkup);
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
-            }
-            if(data.equals("cityR")){
                 try {
-                    execute(yetis.MenuRus(chatId));
+                    execute(yetis.MenuUzb(chatId1));
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
+                promocount = 0;
+                reveving = 0;
             }
 
             //menu
 
-            //sharhlar
+            //contact
+
+            if (data.equals("aleuUzb")) {
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.contactUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            //contact
+
+            //promocode
+
+            if(data.equals("promoUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.PromoUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                promocount++;
+            }
+            if(data.equals("AgainUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.PromoUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                promocount++;
+            }
+
+            //promocode
+
+            //rating
 
             if(data.equals("revUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
                 try {
-                    execute(yetis.FeedbackUzb(chatId));
+                    execute(editMessageReplyMarkup);
+                    state.put(chatId1, "fikr");
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.feedUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                reveving++;
+            }
+
+
+
+            if(data.equals("oneStarUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.OneStarUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("twoStarUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.TwoStarUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("threeStarUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.ThreeStarUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("fourStarUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.FourStarUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("FiveStarUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.FiveStarUzb(chatId1));
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
             }
 
-            if (data.equals("OneStarUzb")){
+            //rating
+
+            //aboutus
+
+            if(data.equals("abotusUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
                 try {
-                    execute(yetis.OneRatingUzb(chatId));
+                    execute(editMessageReplyMarkup);
                 } catch (TelegramApiException e) {
-                    throw  new RuntimeException(e);
+                    throw new RuntimeException(e);
                 }
-            }
-
-            if (data.equals("TwoStarUzb")){
                 try {
-                    execute(yetis.TwoRatingUzb(chatId));
+                    execute(yetis.aboutUzb(chatId1));
                 } catch (TelegramApiException e) {
-                    throw  new RuntimeException(e);
-                }
-            }
-
-            if (data.equals("ThreeStarUzb")){
-                try {
-                    execute(yetis.ThreeRatingUzb(chatId));
-                } catch (TelegramApiException e) {
-                    throw  new RuntimeException(e);
-                }
-            }
-
-            if (data.equals("FourStarUzb")){
-                try {
-                    execute(yetis.FourRatingUzb(chatId));
-                } catch (TelegramApiException e) {
-                    throw  new RuntimeException(e);
-                }
-            }
-
-            if (data.equals("FiveStarUzb")){
-                try {
-                    execute(yetis.FourRatingUzb(chatId));
-                } catch (TelegramApiException e) {
-                    throw  new RuntimeException(e);
-                }
-            }
-
-            if (data.equals("sixeStarUzb")){
-                try {
-
-                    execute(yetis.cityUzb(chatId));
-                } catch (TelegramApiException e) {
-                    throw  new RuntimeException(e);
+                    throw new RuntimeException(e);
                 }
             }
 
 
+            if(data.equals("pavementUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.PayUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("datesUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.workTimeUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("halyalUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.halyalUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(data.equals("nobodyUzb")){
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.niberNibersonUzb(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
 
 
+            //aboutus
 
-
-
-
-            //sharhlar
 
         }
 
