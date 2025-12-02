@@ -1,14 +1,11 @@
 package org.example;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageCaption;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup;
-import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -339,7 +336,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                             throw new RuntimeException(e);
                         }
                         try {
-                            execute(yetis.FiveRatingUzb(chatId1));
+                            execute(yetis.FiveStarUzb(chatId1));
                         } catch (TelegramApiException e) {
                             throw new RuntimeException(e);
                         }
@@ -534,7 +531,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                             throw new RuntimeException(e);
                         }
                         try {
-                            execute(yetis.FiveRatingUzb(chatId1));
+                            execute(yetis.FiveStarUzb(chatId1));
                         } catch (TelegramApiException e) {
                             throw new RuntimeException(e);
                         }

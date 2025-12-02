@@ -54,7 +54,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage changeLanguageEng(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -88,7 +87,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage changeLanguageUzb(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -122,7 +120,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public InlineKeyboardMarkup changeLanguageRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -228,7 +225,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage cityUzb(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -296,7 +292,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public InlineKeyboardMarkup cityRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -364,7 +359,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return inlineKeyboardMarkup;
     }
-
     public SendMessage cityEngShort(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -427,7 +421,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage cityUzbShort(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -490,7 +483,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public InlineKeyboardMarkup cityRusShort(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -606,7 +598,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage MenuEng(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -655,7 +646,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public InlineKeyboardMarkup MenuRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -720,21 +710,18 @@ public class YeatisService {
         sendMessage.setText("Enter the promocode");
         return sendMessage;
     }
-
     public SendMessage PromoUzb(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setText("Promokodni kirting");
         return sendMessage;
     }
-
     public SendMessage PromoRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setText("Введите промокод");
         return sendMessage;
     }
-
     public SendMessage InvalidPromoUzb(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -759,7 +746,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage InvalidPromoEng(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -784,7 +770,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage InvalidPromoRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -809,7 +794,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage PromoShakman(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1345,7 +1329,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage contactEng(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1369,7 +1352,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage contactRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1548,38 +1530,27 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
-
-    public SendMessage FiveRatingUzb(Long chatId) {
+    public SendMessage FiveStarUzb(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
-        sendMessage.setText("Baholashingiz uchun rahmat! Chegirmadan foydalanish uchun ‘FIVEFIVE’ promo-kodini ishlating.");
-        return sendMessage;
-    }
-
-    // sharhlar
-    public SendMessage SixRatingUzb(Long chatId) {
-        SendMessage sendMessage = new SendMessage();
-        sendMessage.setChatId(chatId);
-        sendMessage.setText("Bahoyingiz uchun rahmat! Chegirma olish uchun “FIVEFIVE” promokodidan foydalaning.");
+        sendMessage.setText("Bahoyingiz uchun rahmat! Chegirma olish uchun “FIVEFIVE” promokodini ishlating");
 
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
 
         List<InlineKeyboardButton> row = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
-        button.setText("↩️Menu");
+        button.setText("↩\uFE0FMenu");
         button.setCallbackData("menuUzb");
         row.add(button);
         rowList.add(row);
 
         inlineKeyboardMarkup.setKeyboard(rowList);
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
-
         return sendMessage;
     }
 
-
+    // sharhlar
 
     public SendMessage ZakazUzb(Long chatId) {
         SendMessage sendMessage = new SendMessage();
