@@ -95,6 +95,39 @@ public class YeatisBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             }
+            if (data.equals("eng")) {
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.cityEng(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if (data.equals("rus")) {
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.cityRus(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
 
             if (data.equals("chLanUzb")) {
                 EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
@@ -112,6 +145,38 @@ public class YeatisBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             }
+            if (data.equals("chLanEng")) {
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.changeLanguageEng(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if (data.equals("chLanRus")) {
+                EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
+                editMessageReplyMarkup.setChatId(chatId1);
+                editMessageReplyMarkup.setMessageId(messageId);
+                editMessageReplyMarkup.setReplyMarkup(null);
+                try {
+                    execute(editMessageReplyMarkup);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.changeLanguageRus(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
 
             //language
 
@@ -124,25 +189,22 @@ public class YeatisBot extends TelegramLongPollingBot {
                 editMessageReplyMarkup.setReplyMarkup(null);
                 try {
                     execute(editMessageReplyMarkup);
-                    if (data.equals("cityOfNibrU")) {
-                        try {
-                            execute(yetis.cityUzbShort(chatId1));
-                        } catch (TelegramApiException e) {
-                            throw new RuntimeException(e);
-                        }
-                        try {
-                            execute(yetis.cityUzbShort(chatId1));
-                        } catch (TelegramApiException e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    execute(yetis.cityUzbShort(chatId1));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
 
-                    //city
+            //city
 
                     //menu
 
                     if (data.equals("cityE")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -159,7 +221,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                     }
 
                     if (data.equals("menuUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -182,7 +244,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                     //contact
 
                     if (data.equals("aleuUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -203,7 +265,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                     //promocode
 
                     if (data.equals("promoUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -220,7 +282,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         promocount++;
                     }
                     if (data.equals("AgainUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -242,7 +304,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                     //rating
 
                     if (data.equals("revUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -262,7 +324,7 @@ public class YeatisBot extends TelegramLongPollingBot {
 
 
                     if (data.equals("oneStarUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -278,7 +340,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         }
                     }
                     if (data.equals("twoStarUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -294,7 +356,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         }
                     }
                     if (data.equals("threeStarUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -310,7 +372,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         }
                     }
                     if (data.equals("fourStarUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -326,7 +388,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         }
                     }
                     if (data.equals("FiveStarUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -347,7 +409,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                     //aboutus
 
                     if (data.equals("abotusUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -365,7 +427,7 @@ public class YeatisBot extends TelegramLongPollingBot {
 
 
                     if (data.equals("pavementUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -381,7 +443,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         }
                     }
                     if (data.equals("datesUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -397,7 +459,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         }
                     }
                     if (data.equals("halyalUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -413,7 +475,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         }
                     }
                     if (data.equals("nobodyUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -437,7 +499,7 @@ public class YeatisBot extends TelegramLongPollingBot {
 
 
                     if (data.equals("revUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -457,7 +519,7 @@ public class YeatisBot extends TelegramLongPollingBot {
 //nom
 
                     if (data.equals("oneStarUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -473,7 +535,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         }
                     }
                     if (data.equals("twoStarUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -489,7 +551,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         }
                     }
                     if (data.equals("threeStarUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -505,7 +567,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         }
                     }
                     if (data.equals("fourStarUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -521,7 +583,7 @@ public class YeatisBot extends TelegramLongPollingBot {
                         }
                     }
                     if (data.equals("FiveStarUzb")) {
-                        EditMessageReplyMarkup editMessageReplyMarkup1 = new EditMessageReplyMarkup();
+                        EditMessageReplyMarkup editMessageReplyMarkup = new EditMessageReplyMarkup();
                         editMessageReplyMarkup.setChatId(chatId1);
                         editMessageReplyMarkup.setMessageId(messageId);
                         editMessageReplyMarkup.setReplyMarkup(null);
@@ -538,11 +600,8 @@ public class YeatisBot extends TelegramLongPollingBot {
                     }
 
 
-                }
-                catch (Exception e){
 
-                }
-            }
+
         }
     }
 

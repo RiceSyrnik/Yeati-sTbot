@@ -16,22 +16,14 @@ public class YeatisService {
         sendMessage.setChatId(chatId);
         sendMessage.setText("Greetings\uD83D\uDC4B\n" +
                 "Welcome to \"Yeati's\" Telegram bot\n" +
-                "Choose your language\uD83C\uDF10:\n" +
-                "\n" +
-                "Assalomu aleykum\uD83D\uDC4B\n" +
-                "\"Yeati's\"ning telegram botiga hush kelibsiz\n" +
-                "Sizga qulay bo'lgan tilni tanlang\uD83C\uDF10:\n" +
-                "\n" +
-                "Здраствуйте\uD83D\uDC4B\n" +
-                "Добро пожаловать в телеграм бота \"Yeati's\"\n" +
-                "Выберите ваш язык\uD83C\uDF10:");
+                "Choose your language\uD83C\uDF10:\n");
 
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
 
         List<InlineKeyboardButton> row = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
-        button.setText("\uD83C\uDDEC\uD83C\uDDE7English");
+        button.setText("\uD83C\uDDEC\uD83C\uDDE7English(recommended)");
         button.setCallbackData("eng");
         row.add(button);
         rowList.add(row);
@@ -120,7 +112,7 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-    public InlineKeyboardMarkup changeLanguageRus(Long chatId) {
+    public SendMessage changeLanguageRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setText("Выберите ваш язык:");
@@ -151,7 +143,7 @@ public class YeatisService {
 
         inlineKeyboardMarkup.setKeyboard(rowList);
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
-        return inlineKeyboardMarkup;
+        return sendMessage;
     }
 
     //start
@@ -292,7 +284,7 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-    public InlineKeyboardMarkup cityRus(Long chatId) {
+    public SendMessage cityRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setText("Выберите ваш город:");
@@ -357,8 +349,9 @@ public class YeatisService {
 
         inlineKeyboardMarkup.setKeyboard(rowList);
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
-        return inlineKeyboardMarkup;
+        return sendMessage;
     }
+
     public SendMessage cityEngShort(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -483,7 +476,7 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-    public InlineKeyboardMarkup cityRusShort(Long chatId) {
+    public SendMessage cityRusShort(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setText("Эм... В данный момент доставка на этот регион не работает \nВыберите другой город:");
@@ -543,8 +536,9 @@ public class YeatisService {
 
         inlineKeyboardMarkup.setKeyboard(rowList);
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
-        return inlineKeyboardMarkup;
+        return sendMessage;
     }
+
 
     //shaxar
 
@@ -638,15 +632,15 @@ public class YeatisService {
         rowList.add(row);
 
         button = new InlineKeyboardButton();
-        button.setText("\uD83D\uDCBCJoin us");
-        button.setCallbackData("jobEng");
+        button.setText("\uD83C\uDF10Change language");
+        button.setCallbackData("chLanEng");
         row.add(button);
 
         inlineKeyboardMarkup.setKeyboard(rowList);
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-    public InlineKeyboardMarkup MenuRus(Long chatId) {
+    public SendMessage MenuRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setText("Меню");
@@ -686,13 +680,13 @@ public class YeatisService {
         rowList.add(row);
 
         button = new InlineKeyboardButton();
-        button.setText("\uD83D\uDCBCПрисоединяйтесь к нам");
-        button.setCallbackData("jobRus");
+        button.setText("\uD83C\uDF10Сменить язык");
+        button.setCallbackData("chLanRus");
         row.add(button);
 
         inlineKeyboardMarkup.setKeyboard(rowList);
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
-        return inlineKeyboardMarkup;
+        return sendMessage;
     }
 
     //menu
@@ -722,6 +716,7 @@ public class YeatisService {
         sendMessage.setText("Введите промокод");
         return sendMessage;
     }
+
     public SendMessage InvalidPromoUzb(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -794,6 +789,7 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
+
     public SendMessage PromoShakman(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -867,7 +863,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage aboutEng(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -926,7 +921,6 @@ public class YeatisService {
 
         //savollar
     }
-
     public SendMessage aboutRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1004,7 +998,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage PayEng(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1031,7 +1024,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage PayRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1085,7 +1077,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage workTimeEng(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1112,7 +1103,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage workTimeRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1166,7 +1156,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage halyalEng(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1193,7 +1182,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage halyalRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1247,7 +1235,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage niberNibersonEng(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1274,7 +1261,6 @@ public class YeatisService {
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
         return sendMessage;
     }
-
     public SendMessage niberNibersonRus(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
@@ -1551,94 +1537,4 @@ public class YeatisService {
     }
 
     // sharhlar
-
-    public SendMessage ZakazUzb(Long chatId) {
-        SendMessage sendMessage = new SendMessage();
-        sendMessage.setChatId(chatId);
-        sendMessage.setText("Zakaz qiladigan mahsulotlarni tanlang");
-
-        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
-        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
-
-        List<InlineKeyboardButton> row = new ArrayList<>();
-        InlineKeyboardButton button = new InlineKeyboardButton();
-        button.setText("↩\uFE0FOrqaga");
-        button.setCallbackData("menuUzb");
-        row.add(button);
-        rowList.add(row);
-
-        inlineKeyboardMarkup.setKeyboard(rowList);
-        sendMessage.setReplyMarkup(inlineKeyboardMarkup);
-        return sendMessage;
-    }
-
-    public SendMessage ChooseUzb(Long chatId) {
-        SendMessage sendMessage = new SendMessage();
-        sendMessage.setChatId(chatId);
-        sendMessage.setText("fast-foodingizni tanlang");
-
-        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
-        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
-
-        List<InlineKeyboardButton> row = new ArrayList<>();
-        InlineKeyboardButton button = new InlineKeyboardButton();
-        button.setText("Bekon Burger");
-        button.setCallbackData("");
-        row.add(button);
-        rowList.add(row);
-
-        row = new ArrayList<>();
-        button = new InlineKeyboardButton();
-        button.setText("ChizBurger");
-        button.setCallbackData("");
-        row.add(button);
-        rowList.add(row);
-
-        row = new ArrayList<>();
-        button = new InlineKeyboardButton();
-        button.setText("Vegan Burger");
-        button.setCallbackData("");
-        row.add(button);
-        rowList.add(row);
-
-        row = new ArrayList<>();
-        button = new InlineKeyboardButton();
-        button.setText("Lavash");
-        button.setCallbackData("");
-        row.add(button);
-        rowList.add(row);
-
-        row = new ArrayList<>();
-        button = new InlineKeyboardButton();
-        button.setText("Tovuq va bekonli fri");
-        button.setCallbackData("");
-        row.add(button);
-        rowList.add(row);
-
-        row = new ArrayList<>();
-        button = new InlineKeyboardButton();
-        button.setText("Qovurilgan tovuq");
-        button.setCallbackData("");
-        row.add(button);
-        rowList.add(row);
-
-        row = new ArrayList<>();
-        button = new InlineKeyboardButton();
-        button.setText("↩\uFE0FZakaz");
-        button.setCallbackData("menuUzb");
-        row.add(button);
-        rowList.add(row);
-
-        row = new ArrayList<>();
-        button = new InlineKeyboardButton();
-        button.setText("↩\uFE0FAtmen");
-        button.setCallbackData("menuUzb");
-        row.add(button);
-        rowList.add(row);
-
-        inlineKeyboardMarkup.setKeyboard(rowList);
-        sendMessage.setReplyMarkup(inlineKeyboardMarkup);
-        return sendMessage;
-
-    }
 }
